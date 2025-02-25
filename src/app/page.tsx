@@ -13,7 +13,7 @@ export default function Home() {
           <div className="flex justify-center sm:justify-start">
             <div className="w-48 h-48 sm:w-64 sm:h-64 relative rounded-full overflow-hidden border-4 border-white">
               <Image
-                src="/personal_pic.jpeg"
+                src="/pic.jpeg"
                 alt="Mahmoud Metwalli"
                 fill
                 className="object-cover"
