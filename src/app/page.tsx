@@ -13,10 +13,11 @@ export default function Home() {
           <div className="flex justify-center sm:justify-start">
             <div className="w-48 h-48 sm:w-64 sm:h-64 relative rounded-full overflow-hidden border-4 border-white">
               <Image
-                src="/your-photo.jpeg"
+                src="/personal_pic.jpeg"
                 alt="Mahmoud Metwalli"
-                layout="fill"
-                objectFit="cover"
+                fill
+                className="object-cover"
+                priority
               />
             </div>
           </div>

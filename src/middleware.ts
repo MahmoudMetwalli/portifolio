@@ -2,11 +2,10 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
-  // Get the path of the request
   const path = request.nextUrl.pathname;
 
   // Redirect all paths except "/" to "/"
-  if (path !== '/') {
+  if (path !== '/' && !path.startsWith('/_next') && !path.startsWith('/api')) {
     return NextResponse.redirect(new URL('/', request.url));
   }
 
@@ -14,7 +13,7 @@ export function middleware(request: NextRequest) {
   return NextResponse.next();
 }
 
-// Match all paths except for the home page and Next.js internal routes
+// Match all paths except for the home page and API routes
 export const config = {
   matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
 };
