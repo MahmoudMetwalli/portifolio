@@ -91,9 +91,25 @@ export default function Home() {
           <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-center sm:text-left">Certifications</h2>
           <div className="bg-gray-800 p-6 rounded-lg">
             <h3 className="text-xl font-semibold">AWS Cloud Practitioner Certification | 2024</h3>
+            <a
+              href="https://www.credly.com/badges/a6142965-a3a7-4782-a7f4-4f583764a02a/public_url"
+              className="text-blue-400 hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Credential
+            </a>
           </div>
           <div className="bg-gray-800 p-6 rounded-lg mt-4">
             <h3 className="text-xl font-semibold">McKinsey Forward Program Certificate | Leadership & Business Skills</h3>
+            <a
+              href="https://www.credly.com/badges/0bb34f67-63fd-45aa-9c0f-05221da21fa1/public_url"
+              className="text-blue-400 hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Credential
+            </a>
           </div>
         </section>
 
