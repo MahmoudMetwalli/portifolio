@@ -76,7 +76,7 @@ export default function Home() {
               <li>Debugging and troubleshooting both backend and frontend issues as needed</li>
               <li>Staying up to date with best practices and emerging technologies</li>
               <li>Conducting remote sharing during meetings and updates</li>
-              <li>Providing regular progress reports and updates on the project`&apos;`s status</li>
+              <li>Providing regular progress reports and updates on the project&apos;s status</li>
               <li>Responsible for completing the necessary classes required to finalize any builds as needed</li>
               <li>Must track daily tasks and monitor progress related to the application</li>
               <li>Troubleshoot issues as they arise and provide updates on the solutions</li>
