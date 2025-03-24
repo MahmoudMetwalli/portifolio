@@ -1,7 +1,5 @@
 # Mahmoud Metwalli - Portfolio Website
 
-![Portfolio Screenshot](./public/screenshot.png) <!-- Add a screenshot if available -->
-
 ## Overview
 A responsive portfolio website built with Next.js, showcasing my professional experience as a Software Engineer and Pharmacist. The site features a modern dark theme with gradient backgrounds and clean typography.
 
@@ -20,7 +18,6 @@ A responsive portfolio website built with Next.js, showcasing my professional ex
 ## Technologies Used
 - [Next.js](https://nextjs.org/) - React framework for server-side rendering
 - [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
-- [next/image](https://nextjs.org/docs/api-reference/next/image) - Optimized image component
 - [Vercel](https://vercel.com/) - Deployment platform
 
 ## Getting Started
@@ -91,11 +88,3 @@ This project is open-source and available under the [MIT License](./LICENSE).
 - LinkedIn: [Mahmoud Metwalli](https://www.linkedin.com/in/mahmoud-metwalli/)
 - GitHub: [MahmoudMetwalli](https://github.com/MahmoudMetwalli)
 ```
-
-### Additional Recommendations:
-1. Create a `LICENSE` file if you want to make the project open-source
-2. Add a `screenshot.png` to the public folder for the README preview
-3. Consider adding a `CHANGELOG.md` if you plan to maintain the project
-4. For SEO optimization, you might want to add meta tags in your layout file
-
-This README provides comprehensive documentation while maintaining a professional appearance that matches your portfolio's style. You can further customize it to include specific project details or achievements.
