@@ -86,4 +86,3 @@ This project is open-source and available under the [MIT License](./LICENSE).
 - Email: mammkbih@gmail.com
 - LinkedIn: [Mahmoud Metwalli](https://www.linkedin.com/in/mahmoud-metwalli/)
 - GitHub: [MahmoudMetwalli](https://github.com/MahmoudMetwalli)
-```
