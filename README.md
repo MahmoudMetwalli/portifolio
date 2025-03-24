@@ -69,7 +69,6 @@ portfolio/
 ├── src/
 │   ├── app/          # Next.js 13+ app directory
 │   │   ├── page.jsx  # Main page component
-│   ├── styles/       # Global styles
 ├── package.json
 ├── README.md
 ```
