@@ -113,7 +113,7 @@ export default function Home() {
           </div>
           <div className="bg-gray-800 p-6 rounded-lg mt-4">
             <h3 className="text-xl font-semibold">Technologies</h3>
-            <p className="text-gray-300">NestJS, NextJS, FastAPI, Spring Boot, .NET, Flask, Django, RabbitMQ, Mosquitto</p>
+            <p className="text-gray-300">NestJS, NextJS, FastAPI, Spring Boot, .NET, Flask, Django, RabbitMQ, Mosquitto, Message Brokers, Event-Driven Architecture</p>
           </div>
           <div className="bg-gray-800 p-6 rounded-lg mt-4">
             <h3 className="text-xl font-semibold">Soft Skills</h3>
@@ -144,6 +144,39 @@ export default function Home() {
             >
               View Credential
             </a>
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-center sm:text-left">Notable Projects</h2>
+          <div className="bg-gray-800 p-6 rounded-lg">
+            <h3 className="text-xl font-semibold">Wasla</h3>
+            <p className="text-gray-300 mb-2">Python Package for Event-Driven Architecture</p>
+            <ul className="list-disc list-inside text-gray-300 mt-2">
+              <li>Built a Python package to facilitate event-based systems using RabbitMQ</li>
+              <li>Implemented middleware chain pattern for flexible message processing</li>
+              <li>Added support for Pydantic validation and typed message handling</li>
+              <li>Integrated automatic retry mechanisms and graceful shutdown</li>
+              <li>Published to PyPI with 100+ downloads</li>
+            </ul>
+            <div className="mt-4 space-x-4">
+              <a
+                href="https://pypi.org/project/wasla/0.0.1/"
+                className="text-blue-400 hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                PyPI Package
+              </a>
+              <a
+                href="https://github.com/MahmoudMetwalli/wasla"
+                className="text-blue-400 hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub Repository
+              </a>
+            </div>
           </div>
         </section>
 
