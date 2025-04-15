@@ -148,7 +148,7 @@ export default function Home() {
         </section>
 
         <section className="mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-center sm:text-left">Notable Projects</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-center sm:text-left">Open Source Projects</h2>
           <div className="bg-gray-800 p-6 rounded-lg">
             <h3 className="text-xl font-semibold">Wasla</h3>
             <p className="text-gray-300 mb-2">Python Package for Event-Driven Architecture</p>
