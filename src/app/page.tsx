@@ -113,7 +113,7 @@ export default function Home() {
           </div>
           <div className="bg-gray-800 p-6 rounded-lg mt-4">
             <h3 className="text-xl font-semibold">Technologies</h3>
-            <p className="text-gray-300">NestJS, NextJS, FastAPI, Spring Boot, .NET, Flask, Django, RabbitMQ, Mosquitto, Message Brokers, Event-Driven Architecture</p>
+            <p className="text-gray-300">NestJS, NextJS, FastAPI, Spring Boot, .NET, Flask, Django, RabbitMQ, Mosquitto</p>
           </div>
           <div className="bg-gray-800 p-6 rounded-lg mt-4">
             <h3 className="text-xl font-semibold">Soft Skills</h3>
@@ -157,7 +157,7 @@ export default function Home() {
               <li>Implemented middleware chain pattern for flexible message processing</li>
               <li>Added support for Pydantic validation and typed message handling</li>
               <li>Integrated automatic retry mechanisms and graceful shutdown</li>
-              <li>Published to PyPI with 100+ downloads</li>
+              <li>Published to PyPI</li>
             </ul>
             <div className="mt-4 space-x-4">
               <a
