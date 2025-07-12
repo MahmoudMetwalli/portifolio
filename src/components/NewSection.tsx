@@ -10,7 +10,7 @@ interface NewSectionProps {
 
 const NewSection = ({ title, children, id, bgColor = "bg-white" }: NewSectionProps) => {
   return (
-    <section id={id} className={`py-20 ${bgColor}`}>
+    <section id={id} className={`py-12 sm:py-16 lg:py-20 ${bgColor}`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -18,7 +18,7 @@ const NewSection = ({ title, children, id, bgColor = "bg-white" }: NewSectionPro
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-gray-800 mb-8 sm:mb-10 lg:mb-12">
             {title}
           </h2>
         </motion.div>

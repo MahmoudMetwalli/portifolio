@@ -90,7 +90,7 @@ const DownloadCVButton = () => {
     <button
       onClick={handleDownload}
       disabled={isLoading}
-      className="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg disabled:bg-gray-400 disabled:cursor-not-allowed"
+      className="bg-blue-600 text-white font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg disabled:bg-gray-400 disabled:cursor-not-allowed w-full sm:w-auto text-center"
     >
       {isLoading ? 'Generating...' : 'Download CV'}
     </button>

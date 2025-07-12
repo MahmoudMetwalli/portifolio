@@ -17,7 +17,7 @@ const NewSkillBadge = ({ skill, category }: NewSkillBadgeProps) => {
   const colorClass = categoryColors[category] || "bg-gray-100 text-gray-800";
   return (
     <motion.div
-      className={`px-4 py-2 rounded-lg font-semibold text-center ${colorClass}`}
+      className={`px-3 py-2 sm:px-4 sm:py-2 rounded-lg font-semibold text-center text-sm sm:text-base ${colorClass}`}
       whileHover={{ scale: 1.05 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
