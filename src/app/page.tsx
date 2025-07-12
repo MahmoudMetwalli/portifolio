@@ -117,7 +117,7 @@ export default function Home() {
             </p>
             <p className="text-lg text-gray-600 leading-relaxed">
               My journey from pharmacy to programming has taught me the importance of precision, attention to detail, 
-              and user-centered design. I'm passionate about creating solutions that make a real impact.
+              and user-centered design. I&apos;m passionate about creating solutions that make a real impact.
             </p>
             <div className="flex flex-wrap gap-4">
               <div className="flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-lg">
@@ -339,7 +339,7 @@ export default function Home() {
               Ready to build something amazing together?
             </h3>
             <p className="text-lg text-gray-600 mb-8">
-              I'm always open to discussing new opportunities, collaborating on projects, or just having a conversation about technology and innovation.
+              I&apos;m always open to discussing new opportunities, collaborating on projects, or just having a conversation about technology and innovation.
             </p>
             
             <div className="flex justify-center space-x-6 mb-8">
