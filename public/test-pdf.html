@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PDF Generation Test</title>
+</head>
+<body>
+    <h1>PDF Generation Test</h1>
+    <button onclick="testPDFGeneration()">Test PDF Generation</button>
+    <div id="result"></div>
+
+    <script>
+        async function testPDFGeneration() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Testing PDF generation...';
+            
+            try {
+                const response = await fetch('/api/generate-cv');
+                if (response.ok) {
+                    resultDiv.innerHTML = 'PDF generation successful!';
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'test.pdf';
+                    a.click();
+                } else {
+                    const error = await response.text();
+                    resultDiv.innerHTML = `PDF generation failed: ${response.status} - ${error}`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `Error: ${error.message}`;
+            }
+        }
+    </script>
+</body>
+</html>
