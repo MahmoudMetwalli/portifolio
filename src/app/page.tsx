@@ -7,6 +7,8 @@ import NewProjectCard from "../components/NewProjectCard";
 import NewSkillBadge from "../components/NewSkillBadge";
 import Timeline from "../components/Timeline";
 import { motion } from "framer-motion";
+import DownloadCVButton from '../components/DownloadCVButton';
+import CVPage from './cv/page';
 
 export default function Home() {
   const experiences = [
@@ -76,8 +78,26 @@ export default function Home() {
     { name: "Flask", category: "backend" },
     { name: "Django", category: "backend" },
     { name: "RabbitMQ", category: "devops" },
-    { name: "Mosquitto", category: "devops" }
+    { name: "Mosquitto", category: "devops" },
+    { name: "Redis", category: "database" },
+    { name: "PostgreSQL", category: "database" },
+    { name: "MySQL", category: "database" },
+    { name: "MongoDB", category: "database" },
+    { name: "Docker", category: "devops" },
+    { name: "AWS", category: "devops" },
+    { name: "Git", category: "devops" },
+    { name: "Agile Methodologies", category: "devops" },
+    { name: "Microservices Architecture", category: "backend" },
+    { name: "RESTful APIs", category: "backend" },
+    { name: "GraphQL", category: "backend" },
+    { name: "gRPC", category: "backend" },
+    { name: "Protocol Buffers", category: "backend" },
+    { name: "WebRTC", category: "backend" },
+    { name: "WebSockets", category: "backend" },
+    { name: "MQTT", category: "backend" },
+    { name: "AMQP", category: "backend" },
   ];
+
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -128,6 +148,9 @@ export default function Home() {
                 <FaAward className="text-green-600" />
                 <span className="text-green-800 font-semibold">Software Engineer</span>
               </div>
+            </div>
+            <div className="mt-8">
+              <DownloadCVButton />
             </div>
           </motion.div>
         </div>
@@ -325,6 +348,10 @@ export default function Home() {
           </motion.div>
         </div>
       </NewSection>
+
+      <div id="cv-content" style={{ position: 'absolute', left: '-9999px', top: '-9999px' }}>
+        <CVPage />
+      </div>
 
       <NewSection title="Let's Connect" id="contact" bgColor="bg-gray-50">
         <div className="text-center max-w-4xl mx-auto">
