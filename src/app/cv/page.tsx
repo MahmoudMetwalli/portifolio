@@ -15,17 +15,6 @@ const CVPage = () => {
     },
     {
       title: "Software Engineer",
-      company: "TLC Care Services",
-      duration: "March 2025 – Present",
-      details: [
-        "Developed a platform connecting caregivers and patients, featuring reservation systems and job posting functionalities.",
-        "Built a comprehensive admin administration application for system management.",
-        "Integrated third-party services such as Checkr for background checks and Stripe for payment processing.",
-        "Leveraged AWS services for deploying and managing scalable and reliable infrastructure.",
-      ],
-    },
-    {
-      title: "Software Engineer",
       company: "Ramses International LLC",
       duration: "Oct 2024 – March 2025",
       details: [
@@ -36,9 +25,20 @@ const CVPage = () => {
       ],
     },
     {
+      title: "Software Engineer",
+      company: "TLC Care Services",
+      duration: "Oct 2023 – Oct 2024",
+      details: [
+        "Developed a platform connecting caregivers and patients, featuring reservation systems and job posting functionalities.",
+        "Built a comprehensive admin administration application for system management.",
+        "Integrated third-party services such as Checkr for background checks and Stripe for payment processing.",
+        "Leveraged AWS services for deploying and managing scalable and reliable infrastructure.",
+      ],
+    },
+    {
       title: "Hospital Pharmacist",
       company: "Ain Shams University Hospitals, AllDemerdash Hospital",
-      duration: "Jan 2023 – Sep 2024",
+      duration: "Jan 2023 – Oct 2023",
       details: [],
     },
     {
