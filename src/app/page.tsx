@@ -71,6 +71,8 @@ export default function Home() {
     { name: "Java", category: "language" },
     { name: "C#", category: "language" },
     { name: "C", category: "language" },
+    { name: "Go", category: "language" },
+    { name: "Gin", category: "backend" },
     { name: "NestJS", category: "backend" },
     { name: "NextJS", category: "frontend" },
     { name: "FastAPI", category: "backend" },

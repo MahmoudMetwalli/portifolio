@@ -61,6 +61,8 @@ const CVPage = () => {
     "Java",
     "C#",
     "C",
+    "Go",
+    "Gin",
     "NestJS",
     "NextJS",
     "FastAPI",
