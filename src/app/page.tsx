@@ -426,7 +426,7 @@ export default function Home() {
       <footer className="bg-gray-800 text-white py-8 sm:py-12">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <p className="text-base sm:text-lg">
-            &copy; {new Date().getFullYear()} Mahmoud Metwalli. Crafted with ❤️ and lots of ☕
+            &copy; {new Date().getFullYear()} Mahmoud Metwalli.
           </p>
         </div>
       </footer>
