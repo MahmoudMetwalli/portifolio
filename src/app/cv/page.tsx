@@ -168,6 +168,10 @@ const CVPage = () => {
       url: "https://www.credly.com/badges/a6142965-a3a7-4782-a7f4-4f583764a02a/public_url",
     },
     {
+      name: "AWS Certified Solutions Architect – Associate",
+      url: "https://www.credly.com/badges/aeadc319-0e7a-44f0-b83e-0185cd4e641f/public_url",
+    },
+    {
       name: "McKinsey Forward Program",
       url: "https://www.credly.com/badges/0bb34f67-63fd-45aa-9c0f-05221da21fa1/public_url",
     },

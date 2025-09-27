@@ -330,6 +330,26 @@ export default function Home() {
           </motion.div>
 
           <motion.div
+            className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 lg:p-8 rounded-xl shadow-lg"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <FaAward className="text-2xl lg:text-3xl text-blue-600 mb-4" />
+            <h3 className="text-lg lg:text-xl font-bold text-gray-800 mb-2">AWS Certified Solutions Architect – Associate</h3>
+            <p className="text-white-600 font-semibold mb-2 text-sm lg:text-base">Amazon Web Services | 2025</p>
+            <a
+              href="https://www.credly.com/badges/aeadc319-0e7a-44f0-b83e-0185cd4e641f/public_url"
+              className="inline-block mt-4 text-blue-600 hover:underline font-semibold text-sm lg:text-base"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Credential →
+            </a>
+          </motion.div>
+
+          <motion.div
             className="bg-gradient-to-br from-green-50 to-teal-100 p-6 lg:p-8 rounded-xl shadow-lg"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
