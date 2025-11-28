@@ -4,17 +4,6 @@ const CVPage = () => {
   const experiences = [
     {
       title: "Software Engineer",
-      company: "TLC Care Services",
-      duration: "March 2025 – Present",
-      details: [
-        "Developed a platform connecting caregivers and patients, featuring reservation systems and job posting functionalities.",
-        "Built a comprehensive admin administration application for system management.",
-        "Integrated third-party services such as Checkr for background checks and Stripe for payment processing.",
-        "Leveraged AWS services for deploying and managing scalable and reliable infrastructure.",
-      ],
-    },
-    {
-      title: "Software Engineer",
       company: "Vconnct",
       duration: "March 2025 – Present",
       details: [
@@ -101,6 +90,13 @@ const CVPage = () => {
       liveUrlText: "Live Demo",
     },
     {
+      title: "Payment Gateway",
+      description: "A payment gateway built with NestJS, MongoDB and RabbitMQ.",
+      githubUrl: "",
+      liveUrl: "https://payment-gateway-production-69ed.up.railway.app/api#/",
+      liveUrlText: "Live Demo",
+    },
+    {
       title: "Wasla",
       description:
         "Python package for event-driven architecture with RabbitMQ.",
@@ -178,20 +174,24 @@ const CVPage = () => {
   ];
 
   return (
-    <div className="bg-white text-gray-800 font-serif p-10 max-w-4xl mx-auto" style={{ fontSize: '12pt', lineHeight: '1.6' }}>
+    <div
+      className="bg-white text-gray-800 font-serif p-10 max-w-4xl mx-auto"
+      style={{ fontSize: "12pt", lineHeight: "1.6" }}
+    >
       <header className="text-center mb-10">
         <h1 className="text-5xl font-bold mb-2">Mahmoud Metwalli</h1>
         <p className="text-lg">Heliopolis, Cairo, Egypt</p>
-        <p className="text-lg">
-          +201018615864 | mammkbih@gmail.com
-        </p>
+        <p className="text-lg">+201018615864 | mammkbih@gmail.com</p>
         <p className="text-sm text-gray-600">
-          LinkedIn: https://www.linkedin.com/in/mahmoud-metwalli/ | GitHub: https://github.com/MahmoudMetwalli
+          LinkedIn: https://www.linkedin.com/in/mahmoud-metwalli/ | GitHub:
+          https://github.com/MahmoudMetwalli
         </p>
       </header>
 
       <section className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-700 border-b-2 border-gray-200 pb-2 mb-4">Summary</h2>
+        <h2 className="text-2xl font-bold text-gray-700 border-b-2 border-gray-200 pb-2 mb-4">
+          Summary
+        </h2>
         <p>
           Software Engineer with a unique background combining healthcare
           expertise with cutting-edge technology. Experienced in building
@@ -202,11 +202,15 @@ const CVPage = () => {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-700 border-b-2 border-gray-200 pb-2 mb-4">Professional Experience</h2>
+        <h2 className="text-2xl font-bold text-gray-700 border-b-2 border-gray-200 pb-2 mb-4">
+          Professional Experience
+        </h2>
         {experiences.map((exp, index) => (
           <div key={index} className="mb-6">
             <h3 className="text-xl font-semibold">{exp.title}</h3>
-            <p className="font-medium text-gray-600">{exp.company} | {exp.duration}</p>
+            <p className="font-medium text-gray-600">
+              {exp.company} | {exp.duration}
+            </p>
             {exp.details.length > 0 && (
               <ul className="list-disc list-inside mt-2 pl-4 space-y-1">
                 {exp.details.map((detail, i) => (
@@ -219,18 +223,24 @@ const CVPage = () => {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-700 border-b-2 border-gray-200 pb-2 mb-4">Skills & Technologies</h2>
-        <p className="text-lg">{skills.join(' · ')}</p>
+        <h2 className="text-2xl font-bold text-gray-700 border-b-2 border-gray-200 pb-2 mb-4">
+          Skills & Technologies
+        </h2>
+        <p className="text-lg">{skills.join(" · ")}</p>
       </section>
 
       <section className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-700 border-b-2 border-gray-200 pb-2 mb-4">Education</h2>
+        <h2 className="text-2xl font-bold text-gray-700 border-b-2 border-gray-200 pb-2 mb-4">
+          Education
+        </h2>
         <div className="mb-6">
           <h3 className="text-xl font-semibold">
             ALX Software Engineering Program
           </h3>
           <p className="text-gray-600">Holberton School | 2023–2024</p>
-          <p className="text-sm text-gray-600">Certificate: https://intranet.alxswe.com/certificates/JRPPZLBFnG</p>
+          <p className="text-sm text-gray-600">
+            Certificate: https://intranet.alxswe.com/certificates/JRPPZLBFnG
+          </p>
         </div>
         <div>
           <h3 className="text-xl font-semibold">Bachelor of Pharmacy</h3>
@@ -239,18 +249,25 @@ const CVPage = () => {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-700 border-b-2 border-gray-200 pb-2 mb-4">Certifications</h2>
+        <h2 className="text-2xl font-bold text-gray-700 border-b-2 border-gray-200 pb-2 mb-4">
+          Certifications
+        </h2>
         <ul className="list-disc list-inside pl-4 space-y-1">
           {certifications.map((cert, index) => (
             <li key={index}>
-              {cert.name} - <span className="text-sm text-gray-600">{cert.url.replace('https://', '')}</span>
+              {cert.name} -{" "}
+              <span className="text-sm text-gray-600">
+                {cert.url.replace("https://", "")}
+              </span>
             </li>
           ))}
         </ul>
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold text-gray-700 border-b-2 border-gray-200 pb-2 mb-4">Projects</h2>
+        <h2 className="text-2xl font-bold text-gray-700 border-b-2 border-gray-200 pb-2 mb-4">
+          Projects
+        </h2>
         {projects.map((proj, index) => (
           <div key={index} className="mb-4">
             <h3 className="text-xl font-semibold">{proj.title}</h3>

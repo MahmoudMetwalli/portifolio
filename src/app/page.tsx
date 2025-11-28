@@ -1,28 +1,25 @@
 "use client";
 import Image from "next/image";
-import { FaLinkedin, FaGithub, FaEnvelope, FaPhone, FaGlobe, FaAward, FaGraduationCap } from "react-icons/fa";
+import {
+  FaLinkedin,
+  FaGithub,
+  FaEnvelope,
+  FaPhone,
+  FaGlobe,
+  FaAward,
+  FaGraduationCap,
+} from "react-icons/fa";
 import NewHero from "../components/NewHero";
 import NewSection from "../components/NewSection";
 import NewProjectCard from "../components/NewProjectCard";
 import NewSkillBadge from "../components/NewSkillBadge";
 import Timeline from "../components/Timeline";
 import { motion } from "framer-motion";
-import DownloadCVButton from '../components/DownloadCVButton';
-import CVPage from './cv/page';
+import DownloadCVButton from "../components/DownloadCVButton";
+import CVPage from "./cv/page";
 
 export default function Home() {
   const experiences = [
-    {
-      title: "Software Engineer",
-      company: "TLC Care Services",
-      duration: "March 2025 – Present",
-      details: [
-        "Developed a platform connecting caregivers and patients, featuring reservation systems and job posting functionalities.",
-        "Built a comprehensive admin administration application for system management.",
-        "Integrated third-party services such as Checkr for background checks and Stripe for payment processing.",
-        "Leveraged AWS services for deploying and managing scalable and reliable infrastructure.",
-      ]
-    },
     {
       title: "Software Engineer",
       company: "Vconnct",
@@ -32,7 +29,7 @@ export default function Home() {
         "Developed a comprehensive meeting module with live chat functionality powered by WebSockets.",
         "Engineered a robust messaging system using RabbitMQ as a message broker for asynchronous communication.",
         "Designed and built scalable RESTful APIs to support front-end services and data exchange.",
-      ]
+      ],
     },
     {
       title: "Software Engineer",
@@ -43,26 +40,26 @@ export default function Home() {
         "Integrated RabbitMQ for asynchronous task processing and designed MQTT-based solutions for IoT communication.",
         "Developed a comprehensive stores system with branch schedules and product management.",
         "Engineered a co-working space reservation system with advanced search features and robust race condition handling.",
-      ]
+      ],
     },
     {
       title: "Hospital Pharmacist",
       company: "Ain Shams University Hospitals, AllDemerdash Hospital",
       duration: "Jan 2023 – Sep 2024",
-      details: []
+      details: [],
     },
     {
       title: "Community Pharmacist",
       company: "Care Pharmacies",
       duration: "Dec 2021 – Feb 2023",
-      details: []
+      details: [],
     },
     {
       title: "Compulsory Military Service",
       company: "Egyptian Armed Forces",
       duration: "Oct 2020 – Dec 2021",
-      details: []
-    }
+      details: [],
+    },
   ];
 
   const skills = [
@@ -101,7 +98,6 @@ export default function Home() {
     { name: "AMQP", category: "backend" },
   ];
 
-
   return (
     <div className="min-h-screen bg-gray-50">
       <NewHero />
@@ -132,24 +128,30 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-
             <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-              I am a Software Engineer with a unique background that combines healthcare expertise with cutting-edge technology. 
-              With experience in building scalable systems using microservices architecture, I bring a distinctive perspective 
-              to software development.
+              I am a Software Engineer with a unique background that combines
+              healthcare expertise with cutting-edge technology. With experience
+              in building scalable systems using microservices architecture, I
+              bring a distinctive perspective to software development.
             </p>
             <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-              My journey from pharmacy to programming has taught me the importance of precision, attention to detail, 
-              and user-centered design. I&apos;m passionate about creating solutions that make a real impact.
+              My journey from pharmacy to programming has taught me the
+              importance of precision, attention to detail, and user-centered
+              design. I&apos;m passionate about creating solutions that make a
+              real impact.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
               <div className="flex items-center gap-2 bg-blue-50 px-3 py-2 sm:px-4 sm:py-2 rounded-lg">
                 <FaGraduationCap className="text-blue-600 text-sm sm:text-base" />
-                <span className="text-blue-800 font-semibold text-sm sm:text-base">Pharmacist</span>
+                <span className="text-blue-800 font-semibold text-sm sm:text-base">
+                  Pharmacist
+                </span>
               </div>
               <div className="flex items-center gap-2 bg-green-50 px-3 py-2 sm:px-4 sm:py-2 rounded-lg">
                 <FaAward className="text-green-600 text-sm sm:text-base" />
-                <span className="text-green-800 font-semibold text-sm sm:text-base">Software Engineer</span>
+                <span className="text-green-800 font-semibold text-sm sm:text-base">
+                  Software Engineer
+                </span>
               </div>
             </div>
             <div className="mt-6 lg:mt-8">
@@ -166,7 +168,11 @@ export default function Home() {
       <NewSection title="Skills & Technologies" bgColor="bg-white">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4">
           {skills.map((skill, index) => (
-            <NewSkillBadge key={index} skill={skill.name} category={skill.category} />
+            <NewSkillBadge
+              key={index}
+              skill={skill.name}
+              category={skill.category}
+            />
           ))}
         </div>
       </NewSection>
@@ -180,10 +186,23 @@ export default function Home() {
               "Full-stack web application",
               "User authentication & authorization",
               "Real-time order tracking",
-              "Payment integration"
+              "Payment integration",
             ]}
             liveUrl="https://snacky-mahmoud-metwallis-projects.vercel.app/login"
             githubUrl="https://github.com/MahmoudMetwalli/snacky"
+            featured={true}
+          />
+          <NewProjectCard
+            title="Payment Gateway"
+            description="A payment gateway built with NestJS, MongoDB and RabbitMQ."
+            details={[
+              "Merchants Management",
+              "Payments Processing",
+              "Webhooks Integration",
+              "PCI DSS Compliance",
+            ]}
+            liveUrl="https://payment-gateway-production-69ed.up.railway.app/api#/"
+            githubUrl=""
             featured={true}
           />
           <NewProjectCard
@@ -193,7 +212,7 @@ export default function Home() {
               "Event-based systems",
               "Middleware chain pattern",
               "Pydantic validation",
-              "Published to PyPI"
+              "Published to PyPI",
             ]}
             liveUrl="https://pypi.org/project/wasla/0.0.1/"
             githubUrl="https://github.com/MahmoudMetwalli/wasla"
@@ -206,7 +225,7 @@ export default function Home() {
             details={[
               "Command execution with arguments",
               "Environment variable management",
-              "Built-in commands implementation"
+              "Built-in commands implementation",
             ]}
             githubUrl="https://github.com/MahmoudMetwalli/simple_shell"
           />
@@ -216,7 +235,7 @@ export default function Home() {
             details={[
               "Multiple format specifiers",
               "Memory management",
-              "Error handling"
+              "Error handling",
             ]}
             githubUrl="https://github.com/MahmoudMetwalli/printf"
           />
@@ -226,7 +245,7 @@ export default function Home() {
             details={[
               "Tree traversal algorithms",
               "Insertion and deletion",
-              "Balance operations"
+              "Balance operations",
             ]}
             githubUrl="https://github.com/MahmoudMetwalli/binary_trees"
           />
@@ -236,7 +255,7 @@ export default function Home() {
             details={[
               "Bubble, Quick, Merge sort",
               "Time complexity analysis",
-              "Performance comparisons"
+              "Performance comparisons",
             ]}
             githubUrl="https://github.com/MahmoudMetwalli/sorting_algorithms"
           />
@@ -283,9 +302,15 @@ export default function Home() {
             transition={{ duration: 0.6 }}
           >
             <FaGraduationCap className="text-2xl lg:text-3xl text-blue-600 mb-4" />
-            <h3 className="text-lg lg:text-xl font-bold text-gray-800 mb-2">ALX Software Engineering Program</h3>
-            <p className="text-blue-600 font-semibold mb-2 text-sm lg:text-base">Holberton School | 2023–2024</p>
-            <p className="text-gray-600 text-sm lg:text-base">Computer Science Fundamentals</p>
+            <h3 className="text-lg lg:text-xl font-bold text-gray-800 mb-2">
+              ALX Software Engineering Program
+            </h3>
+            <p className="text-blue-600 font-semibold mb-2 text-sm lg:text-base">
+              Holberton School | 2023–2024
+            </p>
+            <p className="text-gray-600 text-sm lg:text-base">
+              Computer Science Fundamentals
+            </p>
             <a
               href="https://intranet.alxswe.com/certificates/JRPPZLBFnG"
               className="inline-block mt-4 text-blue-600 hover:underline font-semibold text-sm lg:text-base"
@@ -295,7 +320,7 @@ export default function Home() {
               View Certificate →
             </a>
           </motion.div>
-          
+
           <motion.div
             className="bg-gradient-to-br from-purple-50 to-pink-100 p-6 lg:p-8 rounded-xl shadow-lg"
             initial={{ opacity: 0, y: 20 }}
@@ -304,9 +329,15 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <FaGraduationCap className="text-2xl lg:text-3xl text-purple-600 mb-4" />
-            <h3 className="text-lg lg:text-xl font-bold text-gray-800 mb-2">Bachelor of Pharmacy</h3>
-            <p className="text-purple-600 font-semibold mb-2 text-sm lg:text-base">Ain Shams University | 2020</p>
-            <p className="text-gray-600 text-sm lg:text-base">Overall grade: Very Good, 80.47%</p>
+            <h3 className="text-lg lg:text-xl font-bold text-gray-800 mb-2">
+              Bachelor of Pharmacy
+            </h3>
+            <p className="text-purple-600 font-semibold mb-2 text-sm lg:text-base">
+              Ain Shams University | 2020
+            </p>
+            <p className="text-gray-600 text-sm lg:text-base">
+              Overall grade: Very Good, 80.47%
+            </p>
           </motion.div>
 
           <motion.div
@@ -317,8 +348,12 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <FaAward className="text-2xl lg:text-3xl text-orange-600 mb-4" />
-            <h3 className="text-lg lg:text-xl font-bold text-gray-800 mb-2">AWS Cloud Practitioner</h3>
-            <p className="text-orange-600 font-semibold mb-2 text-sm lg:text-base">Amazon Web Services | 2024</p>
+            <h3 className="text-lg lg:text-xl font-bold text-gray-800 mb-2">
+              AWS Cloud Practitioner
+            </h3>
+            <p className="text-orange-600 font-semibold mb-2 text-sm lg:text-base">
+              Amazon Web Services | 2024
+            </p>
             <a
               href="https://www.credly.com/badges/a6142965-a3a7-4782-a7f4-4f583764a02a/public_url"
               className="inline-block mt-4 text-orange-600 hover:underline font-semibold text-sm lg:text-base"
@@ -337,8 +372,12 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <FaAward className="text-2xl lg:text-3xl text-blue-600 mb-4" />
-            <h3 className="text-lg lg:text-xl font-bold text-gray-800 mb-2">AWS Certified Solutions Architect – Associate</h3>
-            <p className="text-white-600 font-semibold mb-2 text-sm lg:text-base">Amazon Web Services | 2025</p>
+            <h3 className="text-lg lg:text-xl font-bold text-gray-800 mb-2">
+              AWS Certified Solutions Architect – Associate
+            </h3>
+            <p className="text-white-600 font-semibold mb-2 text-sm lg:text-base">
+              Amazon Web Services | 2025
+            </p>
             <a
               href="https://www.credly.com/badges/aeadc319-0e7a-44f0-b83e-0185cd4e641f/public_url"
               className="inline-block mt-4 text-blue-600 hover:underline font-semibold text-sm lg:text-base"
@@ -357,9 +396,15 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <FaAward className="text-2xl lg:text-3xl text-green-600 mb-4" />
-            <h3 className="text-lg lg:text-xl font-bold text-gray-800 mb-2">McKinsey Forward Program</h3>
-            <p className="text-green-600 font-semibold mb-2 text-sm lg:text-base">McKinsey & Company</p>
-            <p className="text-gray-600 text-sm lg:text-base">Leadership & Business Skills</p>
+            <h3 className="text-lg lg:text-xl font-bold text-gray-800 mb-2">
+              McKinsey Forward Program
+            </h3>
+            <p className="text-green-600 font-semibold mb-2 text-sm lg:text-base">
+              McKinsey & Company
+            </p>
+            <p className="text-gray-600 text-sm lg:text-base">
+              Leadership & Business Skills
+            </p>
             <a
               href="https://www.credly.com/badges/0bb34f67-63fd-45aa-9c0f-05221da21fa1/public_url"
               className="inline-block mt-4 text-green-600 hover:underline font-semibold text-sm lg:text-base"
@@ -372,7 +417,10 @@ export default function Home() {
         </div>
       </NewSection>
 
-      <div id="cv-content" style={{ position: 'absolute', left: '-9999px', top: '-9999px' }}>
+      <div
+        id="cv-content"
+        style={{ position: "absolute", left: "-9999px", top: "-9999px" }}
+      >
         <CVPage />
       </div>
 
@@ -389,9 +437,11 @@ export default function Home() {
               Ready to build something amazing together?
             </h3>
             <p className="text-base sm:text-lg text-gray-600 mb-6 lg:mb-8">
-              I&apos;m always open to discussing new opportunities, collaborating on projects, or just having a conversation about technology and innovation.
+              I&apos;m always open to discussing new opportunities,
+              collaborating on projects, or just having a conversation about
+              technology and innovation.
             </p>
-            
+
             <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-6 lg:mb-8">
               <a
                 href="mailto:mammkbih@gmail.com"
@@ -435,7 +485,7 @@ export default function Home() {
                 <FaGlobe size={20} className="sm:w-6 sm:h-6" />
               </a>
             </div>
-            
+
             <p className="text-gray-500 text-base sm:text-lg">
               📍 Heliopolis, Cairo, Egypt
             </p>
