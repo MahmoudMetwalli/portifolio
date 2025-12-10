@@ -14,51 +14,46 @@ import NewSection from "../components/NewSection";
 import NewProjectCard from "../components/NewProjectCard";
 import NewSkillBadge from "../components/NewSkillBadge";
 import Timeline from "../components/Timeline";
+import ThemeToggle from "../components/ThemeToggle";
 import { motion } from "framer-motion";
-import DownloadCVButton from "../components/DownloadCVButton";
-import CVPage from "./cv/page";
 
 export default function Home() {
   const experiences = [
     {
-      title: "Software Engineer",
+      title: "Mid Senior Backend Engineer",
       company: "Vconnct",
       duration: "March 2025 – Present",
       details: [
-        "Implemented real-time video and audio communication features using WebRTC.",
-        "Developed a comprehensive meeting module with live chat functionality powered by WebSockets.",
-        "Engineered a robust messaging system using RabbitMQ as a message broker for asynchronous communication.",
-        "Designed and built scalable RESTful APIs to support front-end services and data exchange.",
+        "Implemented real-time video/audio communication using WebRTC, reliably supporting up to 80 concurrent participants.",
+        "Integrated backend with a dedicated SFU to manage signaling, achieving 25% lower latency and 99.7% connection success.",
+        "Built in-meeting chat module with WebSockets for real-time messaging, typing indicators, and user presence.",
+        "Designed persistent message storage powered by RabbitMQ handling 15k-20k messages/day with <150ms delivery.",
+        "Implemented live transcription pipeline using WebSocket streaming to AI service with 1-2 second latency.",
       ],
     },
     {
-      title: "Software Engineer",
+      title: "Backend Developer",
       company: "Ramses International LLC",
-      duration: "Oct 2024 – March 2025",
+      duration: "April 2024 – March 2025",
       details: [
-        "Built scalable backend systems using microservices architecture.",
-        "Integrated RabbitMQ for asynchronous task processing and designed MQTT-based solutions for IoT communication.",
-        "Developed a comprehensive stores system with branch schedules and product management.",
-        "Engineered a co-working space reservation system with advanced search features and robust race condition handling.",
+        "Designed and built scalable microservices handling peak loads of 2K+ RPS with 99.9% uptime.",
+        "Introduced event-driven architecture using RabbitMQ, reducing synchronous blocking calls by ~70%.",
+        "Built MQTT-based real-time communication layer supporting 5K+ concurrent IoT devices with <500ms latency.",
+        "Engineered co-working space reservation system with distributed locks, handling 1K+ daily bookings.",
+        "Added comprehensive logging and distributed tracing, reducing incident debugging time by 60%.",
       ],
     },
     {
-      title: "Hospital Pharmacist",
-      company: "Ain Shams University Hospitals, AllDemerdash Hospital",
-      duration: "Jan 2023 – Sep 2024",
-      details: [],
-    },
-    {
-      title: "Community Pharmacist",
-      company: "Care Pharmacies",
-      duration: "Dec 2021 – Feb 2023",
-      details: [],
-    },
-    {
-      title: "Compulsory Military Service",
-      company: "Egyptian Armed Forces",
-      duration: "Oct 2020 – Dec 2021",
-      details: [],
+      title: "Backend Developer",
+      company: "TLC Care Services",
+      duration: "March 2022 – March 2024",
+      details: [
+        "Modernized legacy codebase for a 10K MAU app, reducing critical bugs by 40% and API latency by 45%.",
+        "Designed and rolled out two major versioned REST APIs (v2 & v3) with zero-downtime deployments.",
+        "Built 40+ high-traffic REST APIs handling 5M+ daily requests at 99.99% uptime.",
+        "Developed interactive analytics dashboards processing 100M+ data points monthly.",
+        "Collaborated with an 8-person frontend team, accelerating feature delivery by 25%.",
+      ],
     },
   ];
 
@@ -70,7 +65,6 @@ export default function Home() {
     { name: "C", category: "language" },
     { name: "Go", category: "language" },
     { name: "Gin", category: "backend" },
-    { name: "NestJS", category: "backend" },
     { name: "NextJS", category: "frontend" },
     { name: "FastAPI", category: "backend" },
     { name: "Spring Boot", category: "backend" },
@@ -99,10 +93,17 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300 relative">
+      <div className="fixed top-4 right-4 z-50">
+        <ThemeToggle />
+      </div>
       <NewHero />
 
-      <NewSection title="About Me" id="about" bgColor="bg-white">
+      <NewSection
+        title="About Me"
+        id="about"
+        bgColor="bg-white dark:bg-gray-800"
+      >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <motion.div
             className="flex justify-center order-1 lg:order-1"
@@ -128,44 +129,38 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-              I am a Software Engineer with a unique background that combines
-              healthcare expertise with cutting-edge technology. With experience
-              in building scalable systems using microservices architecture, I
-              bring a distinctive perspective to software development.
-            </p>
-            <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-              My journey from pharmacy to programming has taught me the
-              importance of precision, attention to detail, and user-centered
-              design. I&apos;m passionate about creating solutions that make a
-              real impact.
+            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+              Results-driven Senior Backend Engineer with 4+ years of experience
+              owning and scaling high-traffic consumer applications. Proven
+              track record of modernizing legacy codebases, reducing critical
+              bugs by 40%, cutting API latency by 45%, and delivering
+              zero-downtime major API version upgrades while maintaining 100%
+              backward compatibility and 99.99% uptime. Specialized in building
+              and optimizing REST APIs, secure payment/auth integrations, and
+              analytics systems processing. Excel at cross-functional
+              collaboration across time zones, consistently achieving 100%
+              on-time delivery and faster release cycles.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
-              <div className="flex items-center gap-2 bg-blue-50 px-3 py-2 sm:px-4 sm:py-2 rounded-lg">
-                <FaGraduationCap className="text-blue-600 text-sm sm:text-base" />
-                <span className="text-blue-800 font-semibold text-sm sm:text-base">
-                  Pharmacist
-                </span>
-              </div>
-              <div className="flex items-center gap-2 bg-green-50 px-3 py-2 sm:px-4 sm:py-2 rounded-lg">
-                <FaAward className="text-green-600 text-sm sm:text-base" />
-                <span className="text-green-800 font-semibold text-sm sm:text-base">
+              <div className="flex items-center gap-2 bg-green-50 dark:bg-green-900/30 px-3 py-2 sm:px-4 sm:py-2 rounded-lg">
+                <FaAward className="text-green-600 dark:text-green-400 text-sm sm:text-base" />
+                <span className="text-green-800 dark:text-green-300 font-semibold text-sm sm:text-base">
                   Software Engineer
                 </span>
               </div>
-            </div>
-            <div className="mt-6 lg:mt-8">
-              <DownloadCVButton />
             </div>
           </motion.div>
         </div>
       </NewSection>
 
-      <NewSection title="Experience" bgColor="bg-gray-50">
+      <NewSection title="Experience" bgColor="bg-gray-50 dark:bg-gray-900">
         <Timeline experiences={experiences} />
       </NewSection>
 
-      <NewSection title="Skills & Technologies" bgColor="bg-white">
+      <NewSection
+        title="Skills & Technologies"
+        bgColor="bg-white dark:bg-gray-800"
+      >
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4">
           {skills.map((skill, index) => (
             <NewSkillBadge
@@ -177,266 +172,215 @@ export default function Home() {
         </div>
       </NewSection>
 
-      <NewSection title="Featured Projects" id="projects" bgColor="bg-gray-50">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+      <NewSection
+        title="Featured Projects"
+        id="projects"
+        bgColor="bg-gray-50 dark:bg-gray-900"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           <NewProjectCard
             title="Snacky"
-            description="A healthy food ordering application built with Next.js and PostgreSQL."
+            description="Full-Stack Food Ordering App • Next.js 14 / App Router"
             details={[
-              "Full-stack web application",
-              "User authentication & authorization",
-              "Real-time order tracking",
-              "Payment integration",
+              "Beautiful, high-performance food ordering web app",
+              "Smooth animations & mock payment integration (Stripe-ready)",
+              "Real-time order tracking & fully functional admin dashboard",
+              "Responsive design, dark mode, and email notifications",
             ]}
-            liveUrl="https://snacky-mahmoud-metwallis-projects.vercel.app/login"
+            liveUrl=""
             githubUrl="https://github.com/MahmoudMetwalli/snacky"
             featured={true}
           />
           <NewProjectCard
-            title="Payment Gateway"
-            description="A payment gateway built with NestJS, MongoDB and RabbitMQ."
+            title="Secure Banking Core System"
+            description="Multi-tenant banking platform • .NET / C#"
             details={[
-              "Merchants Management",
-              "Payments Processing",
-              "Webhooks Integration",
-              "PCI DSS Compliance",
+              "Supports unlimited user accounts & instant transfers",
+              "Real-time multi-currency conversion (100+ currencies)",
+              "Clean architecture, CQRS, and Entity Framework Core",
+              "Role-based authentication for production-scale apps",
             ]}
-            liveUrl="https://payment-gateway-production-69ed.up.railway.app/api#/"
-            githubUrl=""
+            liveUrl=""
+            githubUrl="https://github.com/MahmoudMetwalli/BankingSystem"
             featured={true}
           />
           <NewProjectCard
-            title="Wasla"
-            description="Python package for event-driven architecture with RabbitMQ."
+            title="Intelligent Product Catalog"
+            description="Smart Search Engine • Django / Python"
             details={[
-              "Event-based systems",
-              "Middleware chain pattern",
-              "Pydantic validation",
-              "Published to PyPI",
+              "Advanced hybrid search with typo tolerance",
+              "Arabic–English bilingual search using Elasticsearch",
+              "Full CRUD, category hierarchy, and image uploads",
+              "Admin dashboard for e-commerce backends",
             ]}
-            liveUrl="https://pypi.org/project/wasla/0.0.1/"
-            githubUrl="https://github.com/MahmoudMetwalli/wasla"
-            liveUrlText="PyPI"
+            liveUrl=""
+            githubUrl="https://github.com/MahmoudMetwalli/product_management"
             featured={true}
           />
           <NewProjectCard
-            title="Simple Shell"
-            description="A custom command-line interpreter written in C."
+            title="PCI-DSS Payment Gateway"
+            description="Enterprise Payment System • NestJS / TypeScript"
             details={[
-              "Command execution with arguments",
-              "Environment variable management",
-              "Built-in commands implementation",
+              "Secure card tokenization & 3D Secure",
+              "Fraud detection hooks & guaranteed delivery (RabbitMQ)",
+              "Event-driven architecture with Outbox/Inbox patterns",
+              "High-throughput transactions using MongoDB",
             ]}
-            githubUrl="https://github.com/MahmoudMetwalli/simple_shell"
+            liveUrl=""
+            githubUrl="https://github.com/MahmoudMetwalli/payment-gateway"
+            featured={true}
           />
           <NewProjectCard
-            title="Printf Clone"
-            description="Custom implementation of the C printf function."
+            title="IoT Fleet Management"
+            description="Real-time IoT Platform • Express.js / Node.js"
             details={[
-              "Multiple format specifiers",
-              "Memory management",
-              "Error handling",
+              "Multi-tenancy, remote configuration & OTA updates",
+              "Live telemetry visualization with Socket.IO",
+              "Manage thousands of gateways & millions of devices",
+              "JWT auth & responsive React + Tailwind frontend",
             ]}
-            githubUrl="https://github.com/MahmoudMetwalli/printf"
-          />
-          <NewProjectCard
-            title="Binary Trees"
-            description="Comprehensive C implementation of binary tree data structures."
-            details={[
-              "Tree traversal algorithms",
-              "Insertion and deletion",
-              "Balance operations",
-            ]}
-            githubUrl="https://github.com/MahmoudMetwalli/binary_trees"
-          />
-          <NewProjectCard
-            title="Sorting Algorithms"
-            description="Collection of fundamental sorting algorithms in C."
-            details={[
-              "Bubble, Quick, Merge sort",
-              "Time complexity analysis",
-              "Performance comparisons",
-            ]}
-            githubUrl="https://github.com/MahmoudMetwalli/sorting_algorithms"
-          />
-          <NewProjectCard
-            title="Hash Tables"
-            description="C implementation of hash tables with chaining for collision handling."
-            details={[]}
-            githubUrl="https://github.com/MahmoudMetwalli/alx-low_level_programming/tree/master/0x1A-hash_tables"
-          />
-          <NewProjectCard
-            title="Singly Linked Lists"
-            description="C implementation of singly linked lists."
-            details={[]}
-            githubUrl="https://github.com/MahmoudMetwalli/alx-low_level_programming/tree/master/0x12-singly_linked_lists"
-          />
-          <NewProjectCard
-            title="Doubly Linked Lists"
-            description="C implementation of doubly linked lists."
-            details={[]}
-            githubUrl="https://github.com/MahmoudMetwalli/alx-low_level_programming/tree/master/0x17-doubly_linked_lists"
-          />
-          <NewProjectCard
-            title="Search Algorithms"
-            description="A collection of fundamental searching algorithms in C."
-            details={[]}
-            githubUrl="https://github.com/MahmoudMetwalli/alx-low_level_programming/tree/master/0x1E-search_algorithms"
-          />
-          <NewProjectCard
-            title="Monty Interpreter"
-            description="A bytecode interpreter for the Monty language, implemented in C."
-            details={[]}
-            githubUrl="https://github.com/MahmoudMetwalli/monty"
+            liveUrl=""
+            githubUrl="https://github.com/MahmoudMetwalli/gateway"
+            featured={true}
           />
         </div>
       </NewSection>
 
-      <NewSection title="Education & Certifications" bgColor="bg-white">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+      <NewSection
+        title="Education & Certifications"
+        bgColor="bg-white dark:bg-gray-800"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           <motion.div
-            className="bg-gradient-to-br from-blue-50 to-indigo-100 p-6 lg:p-8 rounded-xl shadow-lg"
+            className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-700/50 p-6 lg:p-8 rounded-xl shadow-lg"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <FaGraduationCap className="text-2xl lg:text-3xl text-blue-600 mb-4" />
-            <h3 className="text-lg lg:text-xl font-bold text-gray-800 mb-2">
-              ALX Software Engineering Program
+            <FaAward className="text-2xl lg:text-3xl text-blue-600 dark:text-blue-400 mb-4" />
+            <h3 className="text-lg lg:text-xl font-bold text-gray-800 dark:text-white mb-2">
+              AWS Solutions Architect Associate
             </h3>
-            <p className="text-blue-600 font-semibold mb-2 text-sm lg:text-base">
-              Holberton School | 2023–2024
+            <p className="text-blue-600 dark:text-blue-300 font-semibold mb-2 text-sm lg:text-base">
+              Amazon Web Services
             </p>
-            <p className="text-gray-600 text-sm lg:text-base">
-              Computer Science Fundamentals
+            <p className="text-gray-600 dark:text-gray-300 text-sm lg:text-base">
+              Scalable, highly available, and fault-tolerant systems on AWS.
             </p>
-            <a
-              href="https://intranet.alxswe.com/certificates/JRPPZLBFnG"
-              className="inline-block mt-4 text-blue-600 hover:underline font-semibold text-sm lg:text-base"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Certificate →
-            </a>
           </motion.div>
 
           <motion.div
-            className="bg-gradient-to-br from-purple-50 to-pink-100 p-6 lg:p-8 rounded-xl shadow-lg"
+            className="bg-gradient-to-br from-orange-50 to-red-100 dark:from-gray-800 dark:to-gray-700/50 p-6 lg:p-8 rounded-xl shadow-lg"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <FaGraduationCap className="text-2xl lg:text-3xl text-purple-600 mb-4" />
-            <h3 className="text-lg lg:text-xl font-bold text-gray-800 mb-2">
-              Bachelor of Pharmacy
-            </h3>
-            <p className="text-purple-600 font-semibold mb-2 text-sm lg:text-base">
-              Ain Shams University | 2020
-            </p>
-            <p className="text-gray-600 text-sm lg:text-base">
-              Overall grade: Very Good, 80.47%
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="bg-gradient-to-br from-orange-50 to-red-100 p-6 lg:p-8 rounded-xl shadow-lg"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <FaAward className="text-2xl lg:text-3xl text-orange-600 mb-4" />
-            <h3 className="text-lg lg:text-xl font-bold text-gray-800 mb-2">
+            <FaAward className="text-2xl lg:text-3xl text-orange-600 dark:text-orange-400 mb-4" />
+            <h3 className="text-lg lg:text-xl font-bold text-gray-800 dark:text-white mb-2">
               AWS Cloud Practitioner
             </h3>
-            <p className="text-orange-600 font-semibold mb-2 text-sm lg:text-base">
-              Amazon Web Services | 2024
+            <p className="text-orange-600 dark:text-orange-300 font-semibold mb-2 text-sm lg:text-base">
+              Amazon Web Services
             </p>
-            <a
-              href="https://www.credly.com/badges/a6142965-a3a7-4782-a7f4-4f583764a02a/public_url"
-              className="inline-block mt-4 text-orange-600 hover:underline font-semibold text-sm lg:text-base"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Credential →
-            </a>
+            <p className="text-gray-600 dark:text-gray-300 text-sm lg:text-base">
+              Foundational knowledge of AWS Cloud concepts and security.
+            </p>
           </motion.div>
 
           <motion.div
-            className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 lg:p-8 rounded-xl shadow-lg"
+            className="bg-gradient-to-br from-green-50 to-teal-100 dark:from-gray-800 dark:to-gray-700/50 p-6 lg:p-8 rounded-xl shadow-lg"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <FaAward className="text-2xl lg:text-3xl text-blue-600 mb-4" />
-            <h3 className="text-lg lg:text-xl font-bold text-gray-800 mb-2">
-              AWS Certified Solutions Architect – Associate
+            <FaAward className="text-2xl lg:text-3xl text-green-600 dark:text-green-400 mb-4" />
+            <h3 className="text-lg lg:text-xl font-bold text-gray-800 dark:text-white mb-2">
+              McKinsey Forward Program
             </h3>
-            <p className="text-white-600 font-semibold mb-2 text-sm lg:text-base">
-              Amazon Web Services | 2025
+            <p className="text-green-600 dark:text-green-300 font-semibold mb-2 text-sm lg:text-base">
+              McKinsey & Company
             </p>
-            <a
-              href="https://www.credly.com/badges/aeadc319-0e7a-44f0-b83e-0185cd4e641f/public_url"
-              className="inline-block mt-4 text-blue-600 hover:underline font-semibold text-sm lg:text-base"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Credential →
-            </a>
+            <p className="text-gray-600 dark:text-gray-300 text-sm lg:text-base">
+              Problem-solving, personal productivity, and digital leadership.
+            </p>
           </motion.div>
 
           <motion.div
-            className="bg-gradient-to-br from-green-50 to-teal-100 p-6 lg:p-8 rounded-xl shadow-lg"
+            className="bg-gradient-to-br from-purple-50 to-pink-100 dark:from-gray-800 dark:to-gray-700/50 p-6 lg:p-8 rounded-xl shadow-lg"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <FaAward className="text-2xl lg:text-3xl text-green-600 mb-4" />
-            <h3 className="text-lg lg:text-xl font-bold text-gray-800 mb-2">
-              McKinsey Forward Program
+            <FaGraduationCap className="text-2xl lg:text-3xl text-purple-600 dark:text-purple-400 mb-4" />
+            <h3 className="text-lg lg:text-xl font-bold text-gray-800 dark:text-white mb-2">
+              ALX Software Engineering Program
             </h3>
-            <p className="text-green-600 font-semibold mb-2 text-sm lg:text-base">
-              McKinsey & Company
+            <p className="text-purple-600 dark:text-purple-300 font-semibold mb-2 text-sm lg:text-base">
+              Holberton School | 2023–2024
             </p>
-            <p className="text-gray-600 text-sm lg:text-base">
-              Leadership & Business Skills
+            <p className="text-gray-600 dark:text-gray-300 text-sm lg:text-base">
+              Computer Science Fundamentals and Backend Specialization.
             </p>
-            <a
-              href="https://www.credly.com/badges/0bb34f67-63fd-45aa-9c0f-05221da21fa1/public_url"
-              className="inline-block mt-4 text-green-600 hover:underline font-semibold text-sm lg:text-base"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Credential →
-            </a>
+          </motion.div>
+
+          <motion.div
+            className="bg-gradient-to-br from-yellow-50 to-amber-100 dark:from-gray-800 dark:to-gray-700/50 p-6 lg:p-8 rounded-xl shadow-lg"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <FaAward className="text-2xl lg:text-3xl text-yellow-600 dark:text-yellow-400 mb-4" />
+            <h3 className="text-lg lg:text-xl font-bold text-gray-800 dark:text-white mb-2">
+              ALX Soft Skills Program
+            </h3>
+            <p className="text-yellow-700 dark:text-yellow-300 font-semibold mb-2 text-sm lg:text-base">
+              ALX Africa | 2023–2024
+            </p>
+            <p className="text-gray-600 dark:text-gray-300 text-sm lg:text-base">
+              Professional Development Skills for the Digital Age.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="bg-gradient-to-br from-gray-50 to-slate-200 dark:from-gray-800 dark:to-gray-700/50 p-6 lg:p-8 rounded-xl shadow-lg"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            <FaGraduationCap className="text-2xl lg:text-3xl text-slate-600 dark:text-slate-300 mb-4" />
+            <h3 className="text-lg lg:text-xl font-bold text-gray-800 dark:text-white mb-2">
+              Bachelor of Pharmacy
+            </h3>
+            <p className="text-slate-700 dark:text-slate-300 font-semibold mb-2 text-sm lg:text-base">
+              Ain Shams University, Cairo
+            </p>
           </motion.div>
         </div>
       </NewSection>
 
-      <div
-        id="cv-content"
-        style={{ position: "absolute", left: "-9999px", top: "-9999px" }}
+      <NewSection
+        title="Let's Connect"
+        id="contact"
+        bgColor="bg-gray-50 dark:bg-gray-900"
       >
-        <CVPage />
-      </div>
-
-      <NewSection title="Let's Connect" id="contact" bgColor="bg-gray-50">
         <div className="text-center max-w-4xl mx-auto">
           <motion.div
-            className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 lg:p-12"
+            className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 sm:p-8 lg:p-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 lg:mb-6">
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-white mb-4 lg:mb-6">
               Ready to build something amazing together?
             </h3>
-            <p className="text-base sm:text-lg text-gray-600 mb-6 lg:mb-8">
+            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-6 lg:mb-8">
               I&apos;m always open to discussing new opportunities,
               collaborating on projects, or just having a conversation about
               technology and innovation.
@@ -485,15 +429,11 @@ export default function Home() {
                 <FaGlobe size={20} className="sm:w-6 sm:h-6" />
               </a>
             </div>
-
-            <p className="text-gray-500 text-base sm:text-lg">
-              📍 Heliopolis, Cairo, Egypt
-            </p>
           </motion.div>
         </div>
       </NewSection>
 
-      <footer className="bg-gray-800 text-white py-8 sm:py-12">
+      <footer className="bg-gray-800 dark:bg-black text-white py-8 sm:py-12">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <p className="text-base sm:text-lg">
             &copy; {new Date().getFullYear()} Mahmoud Metwalli.

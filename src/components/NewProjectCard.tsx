@@ -12,40 +12,64 @@ interface NewProjectCardProps {
   featured?: boolean;
 }
 
-const NewProjectCard = ({ title, description, details, liveUrl, githubUrl, liveUrlText = "Live Demo", featured = false }: NewProjectCardProps) => {
+const NewProjectCard = ({
+  title,
+  description,
+  details,
+  liveUrl,
+  githubUrl,
+  liveUrlText = "Live Demo",
+  featured = false,
+}: NewProjectCardProps) => {
   return (
     <motion.div
-      className={`bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 ${featured ? 'border-2 border-blue-500' : ''}`}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
+      className="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-100 dark:border-gray-700"
+      whileHover={{ y: -5 }}
     >
-      <div className="p-4 sm:p-6">
-        <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">{title}</h3>
-        <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">{description}</p>
-        <ul className="space-y-1 sm:space-y-2 text-gray-600 mb-4 sm:mb-6">
+      <div className="p-6">
+        <div className="flex justify-between items-start mb-4">
+          <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+            {title}
+          </h3>
+          {featured && (
+            <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded-full font-semibold">
+              Featured
+            </span>
+          )}
+        </div>
+        <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">
+          {description}
+        </p>
+        <ul className="space-y-2 mb-6">
           {details.map((detail, index) => (
-            <li key={index} className="flex items-start text-sm sm:text-base">
-              <span className="text-blue-500 mr-2 mt-0.5 text-xs sm:text-sm">✓</span>
-              <span>{detail}</span>
+            <li
+              key={index}
+              className="flex items-center text-gray-500 dark:text-gray-400 text-sm"
+            >
+              <span className="w-1.5 h-1.5 bg-blue-500 dark:bg-blue-400 rounded-full mr-2" />
+              {detail}
             </li>
           ))}
         </ul>
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-0">
-          <div className="flex space-x-3 sm:space-x-4">
-            <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-800 transition-colors">
-              <FaGithub size={20} className="sm:w-6 sm:h-6" />
-            </a>
-            {liveUrl && (
-              <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-600 transition-colors">
-                <FaExternalLinkAlt size={18} className="sm:w-5 sm:h-5" />
-              </a>
-            )}
-          </div>
+          <a
+            href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+          >
+            <FaGithub />
+            <span>Code</span>
+          </a>
           {liveUrl && (
-            <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-semibold text-sm sm:text-base">
-              {liveUrlText}
+            <a
+              href={liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors ml-auto"
+            >
+              <FaExternalLinkAlt />
+              <span>{liveUrlText || "Live Demo"}</span>
             </a>
           )}
         </div>
