@@ -248,6 +248,19 @@ export default function Home() {
             githubUrl="https://github.com/MahmoudMetwalli/gateway"
             featured={true}
           />
+          <NewProjectCard
+            title="Pharmacy Management API"
+            description="RESTful Pharmacy Backend • Go / Gin / PostgreSQL"
+            details={[
+              "Clean layered architecture: Controllers → Services → Repositories",
+              "Full CRUD for drug families, medications & active ingredients",
+              "GORM ORM with PostgreSQL and Atlas-managed migrations",
+              "UUID primary keys, decimal precision for drug quantities",
+            ]}
+            liveUrl=""
+            githubUrl="https://github.com/MahmoudMetwalli/pharmacyManagment"
+            featured={true}
+          />
         </div>
       </NewSection>
 
