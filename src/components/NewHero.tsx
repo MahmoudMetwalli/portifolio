@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { FaLinkedin, FaGithub, FaBars, FaTimes } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaBars, FaTimes, FaDownload } from "react-icons/fa";
 import { Link as ScrollLink } from "react-scroll";
 
 const NewHero = () => {
@@ -28,6 +28,14 @@ const NewHero = () => {
               <a href="https://github.com/MahmoudMetwalli" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-800 transition-colors">
                 <FaGithub size={20} />
               </a>
+              <a
+                href="/cv-mahmoud-metwalli.pdf"
+                download
+                className="flex items-center gap-2 bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+              >
+                <FaDownload size={14} />
+                Download CV
+              </a>
             </div>
           </div>
 
@@ -39,6 +47,14 @@ const NewHero = () => {
               </a>
               <a href="https://github.com/MahmoudMetwalli" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-800 transition-colors">
                 <FaGithub size={18} />
+              </a>
+              <a
+                href="/cv-mahmoud-metwalli.pdf"
+                download
+                className="text-gray-500 hover:text-blue-700 transition-colors"
+                title="Download CV"
+              >
+                <FaDownload size={18} />
               </a>
             </div>
             <button

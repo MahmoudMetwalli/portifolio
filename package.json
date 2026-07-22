@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cv": "node scripts/generate-cv.mjs"
   },
   "dependencies": {
     "@sparticuz/chromium": "^138.0.1",

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Mahmoud Metwalli — CV</title>
+<style>
+  @page {
+    size: A4;
+    margin: 11mm 15mm;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #1f2937;
+    font-size: 9.6pt;
+    line-height: 1.35;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  a { color: #1d4ed8; text-decoration: none; }
+
+  header.cv-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2.5pt solid #1d4ed8;
+    padding-bottom: 6pt;
+    margin-bottom: 7pt;
+  }
+  header.cv-header h1 {
+    margin: 0;
+    font-size: 19pt;
+    font-weight: 700;
+    color: #111827;
+    letter-spacing: 0.2pt;
+  }
+  header.cv-header .role {
+    margin-top: 2pt;
+    font-size: 10.3pt;
+    font-weight: 600;
+    color: #1d4ed8;
+  }
+  .contact-line {
+    margin-top: 5pt;
+    font-size: 8.3pt;
+    color: #374151;
+  }
+  .contact-line span:not(:last-child)::after {
+    content: "  •  ";
+    color: #9ca3af;
+  }
+
+  section { margin-bottom: 6pt; }
+  section:last-of-type { margin-bottom: 0; }
+
+  h2.section-title {
+    font-size: 9.6pt;
+    text-transform: uppercase;
+    letter-spacing: 0.8pt;
+    color: #1d4ed8;
+    border-bottom: 0.75pt solid #cbd5e1;
+    padding-bottom: 2pt;
+    margin: 0 0 4pt 0;
+    font-weight: 700;
+  }
+
+  p.summary { margin: 0; color: #374151; text-align: justify; }
+
+  .entry { margin-bottom: 5pt; }
+  .entry:last-child { margin-bottom: 0; }
+  .entry-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .entry-head .title-line {
+    font-weight: 700;
+    color: #111827;
+    font-size: 9.6pt;
+  }
+  .entry-head .title-line .company {
+    font-weight: 600;
+    color: #1d4ed8;
+  }
+  .entry-head .duration {
+    font-size: 8.2pt;
+    color: #6b7280;
+    white-space: nowrap;
+    padding-left: 10pt;
+  }
+  ul.bullets {
+    margin: 2pt 0 0 0;
+    padding-left: 12pt;
+  }
+  ul.bullets li {
+    margin-bottom: 1pt;
+    color: #374151;
+  }
+  ul.bullets li::marker { color: #1d4ed8; }
+
+  .proj-desc {
+    font-size: 8.5pt;
+    color: #6b7280;
+    font-style: italic;
+    margin: 1pt 0 0 0;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 88pt 1fr;
+    row-gap: 3.5pt;
+    column-gap: 8pt;
+  }
+  .skills-grid .cat {
+    font-weight: 700;
+    color: #111827;
+    font-size: 9pt;
+  }
+  .skills-grid .list {
+    color: #374151;
+  }
+
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 16pt;
+    row-gap: 5pt;
+  }
+  .edu-item .name {
+    font-weight: 700;
+    color: #111827;
+    font-size: 9.3pt;
+  }
+  .edu-item .org {
+    color: #1d4ed8;
+    font-weight: 600;
+    font-size: 8.6pt;
+  }
+  .edu-item .desc {
+    color: #6b7280;
+    font-size: 8.4pt;
+  }
+</style>
+</head>
+<body>
+
+  <header class="cv-header">
+    <div>
+      <h1>Mahmoud Metwalli</h1>
+      <div class="role">Senior Backend Engineer — Node.js / TypeScript</div>
+    </div>
+  </header>
+  <div class="contact-line">
+    <span>mammkbih@gmail.com</span>
+    <span>+20 101 861 5864</span>
+    <span>linkedin.com/in/mahmoud-metwalli</span>
+    <span>github.com/MahmoudMetwalli</span>
+    <span>portfolio-mahmoud-metwalli.vercel.app</span>
+  </div>
+
+  <section>
+    <h2 class="section-title">Summary</h2>
+    <p class="summary">
+      Results-driven Senior Backend Engineer specialized in Node.js (NestJS, Express.js) with 4+ years of experience
+      owning and scaling high-traffic consumer applications, and, most recently, building core services for a
+      multi-vendor education marketplace on NestJS, GraphQL, and CQRS. Proven track record of modernizing legacy
+      codebases, reducing critical bugs by 40%, cutting API latency by 45%, and delivering zero-downtime major API
+      version upgrades while maintaining 99.99% uptime. Specialized in REST/GraphQL APIs, event-driven architecture,
+      and secure payment/auth integrations. Also proficient in Python (FastAPI) for backend services.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="section-title">Experience</h2>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div class="title-line">Senior Backend Engineer · <span class="company">EduMarket</span></div>
+        <div class="duration">Feb 2026 – Present</div>
+      </div>
+      <ul class="bullets">
+        <li>Own core services for a bilingual (AR/EN) multi-vendor education marketplace connecting parents with nurseries, schools, tutors, and transportation providers &mdash; a CQRS + hexagonal (DDD) modular monolith across 58 NestJS modules (GraphQL + REST).</li>
+        <li>Drove a data-layer and architecture rebuild that lifted throughput 6.8&times; (4.85 &rarr; 32.8 req/s) and cut p95 latency ~6&times; (60s &rarr; 9.9s) under 300 concurrent users, dropping the HTTP failure rate from 79.5% to ~0%.</li>
+        <li>Diagnosed bottlenecks with pg_stat_statements and eliminated unindexed sequential scans and N+1 fan-out &mdash; top queries fell from 6&ndash;15s to sub-millisecond &mdash; via targeted read-path indexes, DataLoader batching, and tag-based Redis query caching (99.9% cache-hit rate).</li>
+        <li>Restored previously failing enrollment and wallet flows from 0% to 100% success under load, and removed all circular module dependencies (41 &rarr; 0), enforced by dependency-cruiser + circular-dep pre-commit/pre-push gates.</li>
+        <li>Integrate Kashier and Paymob payment gateways behind cockatiel circuit breakers, alongside wallet and installment/financing modules.</li>
+        <li>Safeguard reliability with 3,000+ automated tests across 428 suites (Jest, Testcontainers) and a 23-scenario k6 load-testing suite run against a 1,000,000-user seeded dataset (20&rarr;200 RPS spike, 15 RPS/45-min soak), with Sentry/Prometheus/Loki observability.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div class="title-line">Mid Senior Backend Engineer · <span class="company">Vconnct</span></div>
+        <div class="duration">March 2025 – Feb 2026</div>
+      </div>
+      <ul class="bullets">
+        <li>Implemented real-time video/audio communication using WebRTC, reliably supporting up to 80 concurrent participants.</li>
+        <li>Integrated backend with a dedicated SFU to manage signaling, achieving 25% lower latency and 99.7% connection success.</li>
+        <li>Built in-meeting chat module with WebSockets for real-time messaging, typing indicators, and user presence.</li>
+        <li>Designed persistent message storage powered by RabbitMQ handling 15k-20k messages/day with &lt;150ms delivery.</li>
+        <li>Implemented live transcription pipeline using WebSocket streaming to AI service with 1-2 second latency.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div class="title-line">Backend Developer · <span class="company">Ramses International LLC</span></div>
+        <div class="duration">April 2024 – March 2025</div>
+      </div>
+      <ul class="bullets">
+        <li>Designed and built scalable microservices handling peak loads of 2K+ RPS with 99.9% uptime.</li>
+        <li>Introduced event-driven architecture using RabbitMQ, reducing synchronous blocking calls by ~70%.</li>
+        <li>Built MQTT-based real-time communication layer supporting 5K+ concurrent IoT devices with &lt;500ms latency.</li>
+        <li>Engineered co-working space reservation system with distributed locks, handling 1K+ daily bookings.</li>
+        <li>Added comprehensive logging and distributed tracing, reducing incident debugging time by 60%.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div class="title-line">Backend Developer · <span class="company">TLC Care Services</span></div>
+        <div class="duration">March 2022 – March 2024</div>
+      </div>
+      <ul class="bullets">
+        <li>Modernized legacy codebase for a 10K MAU app, reducing critical bugs by 40% and API latency by 45%.</li>
+        <li>Designed and rolled out two major versioned REST APIs (v2 &amp; v3) with zero-downtime deployments.</li>
+        <li>Built 40+ high-traffic REST APIs handling 5M+ daily requests at 99.99% uptime.</li>
+        <li>Developed interactive analytics dashboards processing 100M+ data points monthly.</li>
+        <li>Collaborated with an 8-person frontend team, accelerating feature delivery by 25%.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Skills &amp; Technologies</h2>
+    <div class="skills-grid">
+      <div class="cat">Languages</div>
+      <div class="list">JavaScript / TypeScript, Python</div>
+
+      <div class="cat">Backend</div>
+      <div class="list">Node.js, Express.js, NestJS, FastAPI, CQRS, Domain-Driven Design, Microservices Architecture, RESTful APIs, GraphQL, gRPC, Protocol Buffers, WebRTC, WebSockets, MQTT, AMQP</div>
+
+      <div class="cat">Frontend</div>
+      <div class="list">Next.js</div>
+
+      <div class="cat">Databases</div>
+      <div class="list">PostgreSQL, MySQL, MongoDB, Redis, Kysely</div>
+
+      <div class="cat">DevOps / Cloud</div>
+      <div class="list">Docker, AWS (S3, EC2, RDS, ECS, Lambda, SQS, Amplify), RabbitMQ, Mosquitto, Agile Methodologies</div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Featured Projects</h2>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div class="title-line">EduMarket</div>
+        <div class="duration">Proprietary</div>
+      </div>
+      <p class="proj-desc">Education Services Marketplace • NestJS / GraphQL / PostgreSQL</p>
+      <ul class="bullets">
+        <li>Bilingual (AR/EN) multi-vendor marketplace for nurseries, schools, tutors &amp; transportation; CQRS + hexagonal modular monolith across 58 domain modules; drove a rebuild lifting throughput 6.8&times; and cutting p95 latency ~6&times; (79.5% &rarr; ~0% failures under load); event-driven via AWS SQS/RabbitMQ with Redis caching; Kashier/Paymob payments behind circuit breakers.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div class="title-line">Snacky</div>
+        <div class="duration">github.com/MahmoudMetwalli/snacky</div>
+      </div>
+      <p class="proj-desc">Full-Stack Food Ordering App • Next.js 14 / App Router</p>
+      <ul class="bullets">
+        <li>High-performance food ordering app with real-time order tracking, admin dashboard, and mock payment integration (Stripe-ready).</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div class="title-line">Intelligent Product Catalog</div>
+        <div class="duration">github.com/MahmoudMetwalli/product_management</div>
+      </div>
+      <p class="proj-desc">Smart Search Engine • Django / Python</p>
+      <ul class="bullets">
+        <li>Advanced hybrid, typo-tolerant Arabic–English bilingual search using Elasticsearch, with full CRUD and admin dashboard for e-commerce backends.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div class="title-line">PCI-DSS Payment Gateway</div>
+        <div class="duration">github.com/MahmoudMetwalli/payment-gateway</div>
+      </div>
+      <p class="proj-desc">Enterprise Payment System • NestJS / TypeScript</p>
+      <ul class="bullets">
+        <li>Secure card tokenization &amp; 3D Secure, event-driven architecture with Outbox/Inbox patterns, guaranteed delivery via RabbitMQ, high-throughput transactions on MongoDB.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div class="title-line">IoT Fleet Management</div>
+        <div class="duration">github.com/MahmoudMetwalli/gateway</div>
+      </div>
+      <p class="proj-desc">Real-time IoT Platform • Express.js / Node.js</p>
+      <ul class="bullets">
+        <li>Multi-tenant fleet platform managing thousands of gateways and millions of devices, with live telemetry via Socket.IO, OTA updates, and JWT auth.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Education &amp; Certifications</h2>
+    <div class="edu-grid">
+      <div class="edu-item">
+        <div class="name">AWS Solutions Architect Associate</div>
+        <div class="org">Amazon Web Services</div>
+        <div class="desc">Scalable, highly available, fault-tolerant systems on AWS.</div>
+      </div>
+      <div class="edu-item">
+        <div class="name">AWS Cloud Practitioner</div>
+        <div class="org">Amazon Web Services</div>
+        <div class="desc">Foundational AWS Cloud concepts and security.</div>
+      </div>
+      <div class="edu-item">
+        <div class="name">ALX Software Engineering Program</div>
+        <div class="org">Holberton School | 2023–2024</div>
+        <div class="desc">Computer Science fundamentals and backend specialization.</div>
+      </div>
+      <div class="edu-item">
+        <div class="name">ALX Soft Skills Program</div>
+        <div class="org">ALX Africa | 2023–2024</div>
+        <div class="desc">Professional development skills for the digital age.</div>
+      </div>
+      <div class="edu-item">
+        <div class="name">McKinsey Forward Program</div>
+        <div class="org">McKinsey &amp; Company</div>
+        <div class="desc">Problem-solving, productivity, and digital leadership.</div>
+      </div>
+      <div class="edu-item">
+        <div class="name">Bachelor of Pharmacy</div>
+        <div class="org">Ain Shams University, Cairo</div>
+        <div class="desc">&nbsp;</div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

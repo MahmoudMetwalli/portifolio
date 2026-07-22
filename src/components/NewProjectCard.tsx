@@ -1,13 +1,13 @@
 "use client";
 import { motion } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaLock } from "react-icons/fa";
 
 interface NewProjectCardProps {
   title: string;
   description: string;
   details: string[];
   liveUrl?: string;
-  githubUrl: string;
+  githubUrl?: string;
   liveUrlText?: string;
   featured?: boolean;
 }
@@ -52,15 +52,17 @@ const NewProjectCard = ({
           ))}
         </ul>
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-0">
-          <a
-            href={githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
-          >
-            <FaGithub />
-            <span>Code</span>
-          </a>
+          {githubUrl && (
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+            >
+              <FaGithub />
+              <span>Code</span>
+            </a>
+          )}
           {liveUrl && (
             <a
               href={liveUrl}
@@ -71,6 +73,12 @@ const NewProjectCard = ({
               <FaExternalLinkAlt />
               <span>{liveUrlText || "Live Demo"}</span>
             </a>
+          )}
+          {!githubUrl && !liveUrl && (
+            <span className="flex items-center gap-2 text-gray-400 dark:text-gray-500 text-sm">
+              <FaLock />
+              <span>Proprietary</span>
+            </span>
           )}
         </div>
       </div>

@@ -20,9 +20,22 @@ import { motion } from "framer-motion";
 export default function Home() {
   const experiences = [
     {
+      title: "Senior Backend Engineer",
+      company: "EduMarket",
+      duration: "Feb 2026 – Present",
+      details: [
+        "Own core services for a bilingual (AR/EN) multi-vendor education marketplace connecting parents with nurseries, schools, tutors, and transportation providers — a CQRS + hexagonal (DDD) modular monolith across 58 NestJS modules (GraphQL + REST).",
+        "Drove a data-layer and architecture rebuild that lifted throughput 6.8× (4.85 → 32.8 req/s) and cut p95 latency ~6× (60s → 9.9s) under 300 concurrent users, dropping the HTTP failure rate from 79.5% to ~0%.",
+        "Diagnosed bottlenecks with pg_stat_statements and eliminated unindexed sequential scans and N+1 fan-out — top queries fell from 6–15s to sub-millisecond — via targeted read-path indexes, DataLoader batching, and tag-based Redis query caching (99.9% cache-hit rate).",
+        "Restored previously failing enrollment and wallet flows from 0% to 100% success under load, and removed all circular module dependencies (41 → 0), enforced by dependency-cruiser + circular-dep pre-commit/pre-push gates.",
+        "Integrate Kashier and Paymob payment gateways behind cockatiel circuit breakers, alongside wallet and installment/financing modules.",
+        "Safeguard reliability with 3,000+ automated tests across 428 suites (Jest, Testcontainers) and a 23-scenario k6 load-testing suite run against a 1,000,000-user seeded dataset (20→200 RPS spike, 15 RPS/45-min soak), with Sentry/Prometheus/Loki observability.",
+      ],
+    },
+    {
       title: "Mid Senior Backend Engineer",
       company: "Vconnct",
-      duration: "March 2025 – Present",
+      duration: "March 2025 – Feb 2026",
       details: [
         "Implemented real-time video/audio communication using WebRTC, reliably supporting up to 80 concurrent participants.",
         "Integrated backend with a dedicated SFU to manage signaling, achieving 25% lower latency and 99.7% connection success.",
@@ -58,25 +71,20 @@ export default function Home() {
   ];
 
   const skills = [
-    { name: "Python", category: "language" },
     { name: "JavaScript/TypeScript", category: "language" },
-    { name: "Java", category: "language" },
-    { name: "C#", category: "language" },
-    { name: "C", category: "language" },
-    { name: "Go", category: "language" },
-    { name: "Gin", category: "backend" },
+    { name: "Python", category: "language" },
+    { name: "Node.js", category: "backend" },
+    { name: "Express.js", category: "backend" },
+    { name: "NestJS", category: "backend" },
     { name: "NextJS", category: "frontend" },
     { name: "FastAPI", category: "backend" },
-    { name: "Spring Boot", category: "backend" },
-    { name: ".NET", category: "backend" },
-    { name: "Flask", category: "backend" },
-    { name: "Django", category: "backend" },
     { name: "RabbitMQ", category: "devops" },
     { name: "Mosquitto", category: "devops" },
     { name: "Redis", category: "database" },
     { name: "PostgreSQL", category: "database" },
     { name: "MySQL", category: "database" },
     { name: "MongoDB", category: "database" },
+    { name: "Kysely", category: "database" },
     { name: "Docker", category: "devops" },
     { name: "AWS", category: "devops" },
     { name: "S3", category: "devops" },
@@ -85,8 +93,11 @@ export default function Home() {
     { name: "ECS", category: "devops" },
     { name: "Lambda", category: "devops" },
     { name: "Amplify", category: "devops" },
+    { name: "SQS", category: "devops" },
     { name: "Agile Methodologies", category: "devops" },
     { name: "Microservices Architecture", category: "backend" },
+    { name: "CQRS", category: "backend" },
+    { name: "Domain-Driven Design", category: "backend" },
     { name: "RESTful APIs", category: "backend" },
     { name: "GraphQL", category: "backend" },
     { name: "gRPC", category: "backend" },
@@ -184,6 +195,18 @@ export default function Home() {
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           <NewProjectCard
+            title="EduMarket"
+            description="Education Services Marketplace • NestJS / GraphQL / PostgreSQL"
+            details={[
+              "Bilingual (AR/EN) multi-vendor marketplace for nurseries, schools, tutors & transportation",
+              "CQRS + hexagonal modular monolith with tactical DDD across 58 domain modules",
+              "6.8× throughput & ~6× lower p95 latency after a data-layer rebuild (79.5% → ~0% failures under load)",
+              "Event-driven via AWS SQS/RabbitMQ, with Redis-backed caching & invalidation",
+              "Kashier/Paymob payments behind circuit breakers, plus wallet & installments",
+            ]}
+            featured={true}
+          />
+          <NewProjectCard
             title="Snacky"
             description="Full-Stack Food Ordering App • Next.js 14 / App Router"
             details={[
@@ -194,19 +217,6 @@ export default function Home() {
             ]}
             liveUrl=""
             githubUrl="https://github.com/MahmoudMetwalli/snacky"
-            featured={true}
-          />
-          <NewProjectCard
-            title="Secure Banking Core System"
-            description="Multi-tenant banking platform • .NET / C#"
-            details={[
-              "Supports unlimited user accounts & instant transfers",
-              "Real-time multi-currency conversion (100+ currencies)",
-              "Clean architecture, CQRS, and Entity Framework Core",
-              "Role-based authentication for production-scale apps",
-            ]}
-            liveUrl=""
-            githubUrl="https://github.com/MahmoudMetwalli/BankingSystem"
             featured={true}
           />
           <NewProjectCard
@@ -246,19 +256,6 @@ export default function Home() {
             ]}
             liveUrl=""
             githubUrl="https://github.com/MahmoudMetwalli/gateway"
-            featured={true}
-          />
-          <NewProjectCard
-            title="Pharmacy Management API"
-            description="RESTful Pharmacy Backend • Go / Gin / PostgreSQL"
-            details={[
-              "Clean layered architecture: Controllers → Services → Repositories",
-              "Full CRUD for drug families, medications & active ingredients",
-              "GORM ORM with PostgreSQL and Atlas-managed migrations",
-              "UUID primary keys, decimal precision for drug quantities",
-            ]}
-            liveUrl=""
-            githubUrl="https://github.com/MahmoudMetwalli/pharmacyManagment"
             featured={true}
           />
         </div>
